@@ -1,0 +1,620 @@
+{
+  "benchmark_suite": "Staged Load Benchmark (5 - 500 VUs)",
+  "executed_at": "2026-10-30T18:06:35.848923+00:00",
+  "total_stages_run": 6,
+  "stages_passed": 6,
+  "stages": [
+    {
+      "stage": "Stage 1: Baseline",
+      "vus": 5,
+      "configured_duration": "10s",
+      "actual_ingestion_time_seconds": 11.4,
+      "ingestion_metrics": {
+        "total_requests": 675,
+        "throughput_rps": 66.81,
+        "failed_rate": 0,
+        "p50_ms": 21.62,
+        "p90_ms": 34.81,
+        "p95_ms": 40.8,
+        "p99_ms": 64.14,
+        "min_ms": 8.79,
+        "max_ms": 83.42,
+        "avg_ms": 23.45
+      },
+      "slo_evaluation": {
+        "slo_p95_ms_threshold": 100,
+        "p95_actual_ms": 40.8,
+        "latency_slo_met": true,
+        "error_rate_threshold": 0.01,
+        "error_rate_actual": 0,
+        "error_slo_met": true,
+        "queue_drained": true,
+        "stage_status": "PASSED_WITHIN_SLO"
+      },
+      "asynchronous_delivery": {
+        "events_ingested": 674,
+        "db_succeeded_deliveries_delta": 674,
+        "webhooks_received_at_destination": 674,
+        "unique_delivery_ids_received": 674,
+        "duplicate_requests_received": 0,
+        "missing_deliveries": 0,
+        "delivery_completion_rate": 1.0,
+        "queue_drain_time_seconds": 0.83,
+        "queue_fully_drained": true,
+        "delivery_throughput_dps": 55.13,
+        "initial_db_state": {
+          "pending_outbox": 0,
+          "pending_deliveries": 0,
+          "succeeded_deliveries": 24200,
+          "failed_deliveries": 4,
+          "dead_lettered_deliveries": 10
+        },
+        "final_db_state": {
+          "pending_outbox": 0,
+          "pending_deliveries": 0,
+          "succeeded_deliveries": 24874,
+          "failed_deliveries": 4,
+          "dead_lettered_deliveries": 10
+        }
+      },
+      "resource_utilization": {
+        "initial": {
+          "api": {
+            "cpu_percent": 0.72,
+            "mem_usage": "159.2MiB"
+          },
+          "worker": {
+            "cpu_percent": 0.2,
+            "mem_usage": "388.2MiB"
+          },
+          "outbox-dispatcher": {
+            "cpu_percent": 1.79,
+            "mem_usage": "65.09MiB"
+          },
+          "postgres": {
+            "cpu_percent": 2.17,
+            "mem_usage": "80.08MiB"
+          },
+          "redis": {
+            "cpu_percent": 1.02,
+            "mem_usage": "8.836MiB"
+          }
+        },
+        "peak": {
+          "api": {
+            "cpu_percent": 0.79,
+            "mem_usage": "160.6MiB"
+          },
+          "worker": {
+            "cpu_percent": 104.18,
+            "mem_usage": "546.7MiB"
+          },
+          "outbox-dispatcher": {
+            "cpu_percent": 0.0,
+            "mem_usage": "65.13MiB"
+          },
+          "postgres": {
+            "cpu_percent": 0.03,
+            "mem_usage": "99.05MiB"
+          },
+          "redis": {
+            "cpu_percent": 1.11,
+            "mem_usage": "9.145MiB"
+          }
+        }
+      },
+      "passed": true,
+      "status": "PASSED_WITHIN_SLO"
+    },
+    {
+      "stage": "Stage 2: Moderate",
+      "vus": 20,
+      "configured_duration": "15s",
+      "actual_ingestion_time_seconds": 17.49,
+      "ingestion_metrics": {
+        "total_requests": 2461,
+        "throughput_rps": 162.1,
+        "failed_rate": 0,
+        "p50_ms": 60.15,
+        "p90_ms": 130.88,
+        "p95_ms": 174.51,
+        "p99_ms": 229.33,
+        "min_ms": 8.52,
+        "max_ms": 420.49,
+        "avg_ms": 71.95
+      },
+      "slo_evaluation": {
+        "slo_p95_ms_threshold": 250,
+        "p95_actual_ms": 174.51,
+        "latency_slo_met": true,
+        "error_rate_threshold": 0.01,
+        "error_rate_actual": 0,
+        "error_slo_met": true,
+        "queue_drained": true,
+        "stage_status": "PASSED_WITHIN_SLO"
+      },
+      "asynchronous_delivery": {
+        "events_ingested": 2460,
+        "db_succeeded_deliveries_delta": 2460,
+        "webhooks_received_at_destination": 2460,
+        "unique_delivery_ids_received": 2460,
+        "duplicate_requests_received": 0,
+        "missing_deliveries": 0,
+        "delivery_completion_rate": 1.0,
+        "queue_drain_time_seconds": 0.87,
+        "queue_fully_drained": true,
+        "delivery_throughput_dps": 134.03,
+        "initial_db_state": {
+          "pending_outbox": 0,
+          "pending_deliveries": 0,
+          "succeeded_deliveries": 24874,
+          "failed_deliveries": 4,
+          "dead_lettered_deliveries": 10
+        },
+        "final_db_state": {
+          "pending_outbox": 0,
+          "pending_deliveries": 0,
+          "succeeded_deliveries": 27334,
+          "failed_deliveries": 4,
+          "dead_lettered_deliveries": 10
+        }
+      },
+      "resource_utilization": {
+        "initial": {
+          "api": {
+            "cpu_percent": 1.65,
+            "mem_usage": "160.8MiB"
+          },
+          "worker": {
+            "cpu_percent": 0.18,
+            "mem_usage": "546.7MiB"
+          },
+          "outbox-dispatcher": {
+            "cpu_percent": 0.3,
+            "mem_usage": "65.13MiB"
+          },
+          "postgres": {
+            "cpu_percent": 2.58,
+            "mem_usage": "99.47MiB"
+          },
+          "redis": {
+            "cpu_percent": 2.13,
+            "mem_usage": "8.793MiB"
+          }
+        },
+        "peak": {
+          "api": {
+            "cpu_percent": 0.55,
+            "mem_usage": "163.6MiB"
+          },
+          "worker": {
+            "cpu_percent": 309.89,
+            "mem_usage": "578.9MiB"
+          },
+          "outbox-dispatcher": {
+            "cpu_percent": 0.39,
+            "mem_usage": "65.18MiB"
+          },
+          "postgres": {
+            "cpu_percent": 41.99,
+            "mem_usage": "134.9MiB"
+          },
+          "redis": {
+            "cpu_percent": 8.35,
+            "mem_usage": "9.34MiB"
+          }
+        }
+      },
+      "passed": true,
+      "status": "PASSED_WITHIN_SLO"
+    },
+    {
+      "stage": "Stage 3: High",
+      "vus": 50,
+      "configured_duration": "15s",
+      "actual_ingestion_time_seconds": 17.52,
+      "ingestion_metrics": {
+        "total_requests": 2822,
+        "throughput_rps": 185.93,
+        "failed_rate": 0,
+        "p50_ms": 209.15,
+        "p90_ms": 290.91,
+        "p95_ms": 319.28,
+        "p99_ms": 386.82,
+        "min_ms": 14.8,
+        "max_ms": 513.44,
+        "avg_ms": 216.74
+      },
+      "slo_evaluation": {
+        "slo_p95_ms_threshold": 500,
+        "p95_actual_ms": 319.28,
+        "latency_slo_met": true,
+        "error_rate_threshold": 0.01,
+        "error_rate_actual": 0,
+        "error_slo_met": true,
+        "queue_drained": true,
+        "stage_status": "PASSED_WITHIN_SLO"
+      },
+      "asynchronous_delivery": {
+        "events_ingested": 2821,
+        "db_succeeded_deliveries_delta": 2821,
+        "webhooks_received_at_destination": 2821,
+        "unique_delivery_ids_received": 2821,
+        "duplicate_requests_received": 0,
+        "missing_deliveries": 0,
+        "delivery_completion_rate": 1.0,
+        "queue_drain_time_seconds": 0.75,
+        "queue_fully_drained": true,
+        "delivery_throughput_dps": 154.4,
+        "initial_db_state": {
+          "pending_outbox": 0,
+          "pending_deliveries": 0,
+          "succeeded_deliveries": 27334,
+          "failed_deliveries": 4,
+          "dead_lettered_deliveries": 10
+        },
+        "final_db_state": {
+          "pending_outbox": 0,
+          "pending_deliveries": 0,
+          "succeeded_deliveries": 30155,
+          "failed_deliveries": 4,
+          "dead_lettered_deliveries": 10
+        }
+      },
+      "resource_utilization": {
+        "initial": {
+          "api": {
+            "cpu_percent": 0.75,
+            "mem_usage": "163MiB"
+          },
+          "worker": {
+            "cpu_percent": 0.14,
+            "mem_usage": "578.1MiB"
+          },
+          "outbox-dispatcher": {
+            "cpu_percent": 0.0,
+            "mem_usage": "65.18MiB"
+          },
+          "postgres": {
+            "cpu_percent": 0.04,
+            "mem_usage": "135.1MiB"
+          },
+          "redis": {
+            "cpu_percent": 1.11,
+            "mem_usage": "9.047MiB"
+          }
+        },
+        "peak": {
+          "api": {
+            "cpu_percent": 0.75,
+            "mem_usage": "168.9MiB"
+          },
+          "worker": {
+            "cpu_percent": 0.04,
+            "mem_usage": "596.8MiB"
+          },
+          "outbox-dispatcher": {
+            "cpu_percent": 0.31,
+            "mem_usage": "65.25MiB"
+          },
+          "postgres": {
+            "cpu_percent": 3.43,
+            "mem_usage": "186.4MiB"
+          },
+          "redis": {
+            "cpu_percent": 2.1,
+            "mem_usage": "9.469MiB"
+          }
+        }
+      },
+      "passed": true,
+      "status": "PASSED_WITHIN_SLO"
+    },
+    {
+      "stage": "Stage 4: Stress",
+      "vus": 100,
+      "configured_duration": "15s",
+      "actual_ingestion_time_seconds": 17.78,
+      "ingestion_metrics": {
+        "total_requests": 2721,
+        "throughput_rps": 177.94,
+        "failed_rate": 0,
+        "p50_ms": 499.09,
+        "p90_ms": 667.74,
+        "p95_ms": 730.12,
+        "p99_ms": 838.63,
+        "min_ms": 11.37,
+        "max_ms": 961.47,
+        "avg_ms": 505.11
+      },
+      "slo_evaluation": {
+        "slo_p95_ms_threshold": 1000,
+        "p95_actual_ms": 730.12,
+        "latency_slo_met": true,
+        "error_rate_threshold": 0.01,
+        "error_rate_actual": 0,
+        "error_slo_met": true,
+        "queue_drained": true,
+        "stage_status": "PASSED_WITHIN_SLO"
+      },
+      "asynchronous_delivery": {
+        "events_ingested": 2720,
+        "db_succeeded_deliveries_delta": 2720,
+        "webhooks_received_at_destination": 2720,
+        "unique_delivery_ids_received": 2720,
+        "duplicate_requests_received": 0,
+        "missing_deliveries": 0,
+        "delivery_completion_rate": 1.0,
+        "queue_drain_time_seconds": 0.74,
+        "queue_fully_drained": true,
+        "delivery_throughput_dps": 146.88,
+        "initial_db_state": {
+          "pending_outbox": 0,
+          "pending_deliveries": 0,
+          "succeeded_deliveries": 30155,
+          "failed_deliveries": 4,
+          "dead_lettered_deliveries": 10
+        },
+        "final_db_state": {
+          "pending_outbox": 0,
+          "pending_deliveries": 0,
+          "succeeded_deliveries": 32875,
+          "failed_deliveries": 4,
+          "dead_lettered_deliveries": 10
+        }
+      },
+      "resource_utilization": {
+        "initial": {
+          "api": {
+            "cpu_percent": 2.05,
+            "mem_usage": "167.8MiB"
+          },
+          "worker": {
+            "cpu_percent": 0.0,
+            "mem_usage": "596.8MiB"
+          },
+          "outbox-dispatcher": {
+            "cpu_percent": 0.35,
+            "mem_usage": "65.25MiB"
+          },
+          "postgres": {
+            "cpu_percent": 3.06,
+            "mem_usage": "187.5MiB"
+          },
+          "redis": {
+            "cpu_percent": 1.2,
+            "mem_usage": "9.141MiB"
+          }
+        },
+        "peak": {
+          "api": {
+            "cpu_percent": 0.55,
+            "mem_usage": "177.6MiB"
+          },
+          "worker": {
+            "cpu_percent": 320.18,
+            "mem_usage": "616.3MiB"
+          },
+          "outbox-dispatcher": {
+            "cpu_percent": 0.42,
+            "mem_usage": "65.28MiB"
+          },
+          "postgres": {
+            "cpu_percent": 41.43,
+            "mem_usage": "230.1MiB"
+          },
+          "redis": {
+            "cpu_percent": 9.67,
+            "mem_usage": "9.309MiB"
+          }
+        }
+      },
+      "passed": true,
+      "status": "PASSED_WITHIN_SLO"
+    },
+    {
+      "stage": "Stage 5: Extended Stress",
+      "vus": 250,
+      "configured_duration": "15s",
+      "actual_ingestion_time_seconds": 17.35,
+      "ingestion_metrics": {
+        "total_requests": 2775,
+        "throughput_rps": 173.48,
+        "failed_rate": 0,
+        "p50_ms": 1327.99,
+        "p90_ms": 1671.58,
+        "p95_ms": 1813.84,
+        "p99_ms": 2736.56,
+        "min_ms": 7.97,
+        "max_ms": 3144.36,
+        "avg_ms": 1347.56
+      },
+      "slo_evaluation": {
+        "slo_p95_ms_threshold": 2500,
+        "p95_actual_ms": 1813.84,
+        "latency_slo_met": true,
+        "error_rate_threshold": 0.01,
+        "error_rate_actual": 0,
+        "error_slo_met": true,
+        "queue_drained": true,
+        "stage_status": "PASSED_WITHIN_SLO"
+      },
+      "asynchronous_delivery": {
+        "events_ingested": 2774,
+        "db_succeeded_deliveries_delta": 2774,
+        "webhooks_received_at_destination": 2774,
+        "unique_delivery_ids_received": 2774,
+        "duplicate_requests_received": 0,
+        "missing_deliveries": 0,
+        "delivery_completion_rate": 1.0,
+        "queue_drain_time_seconds": 0.74,
+        "queue_fully_drained": true,
+        "delivery_throughput_dps": 153.38,
+        "initial_db_state": {
+          "pending_outbox": 0,
+          "pending_deliveries": 0,
+          "succeeded_deliveries": 32875,
+          "failed_deliveries": 4,
+          "dead_lettered_deliveries": 10
+        },
+        "final_db_state": {
+          "pending_outbox": 0,
+          "pending_deliveries": 0,
+          "succeeded_deliveries": 35649,
+          "failed_deliveries": 4,
+          "dead_lettered_deliveries": 10
+        }
+      },
+      "resource_utilization": {
+        "initial": {
+          "api": {
+            "cpu_percent": 0.58,
+            "mem_usage": "177.8MiB"
+          },
+          "worker": {
+            "cpu_percent": 0.27,
+            "mem_usage": "616.9MiB"
+          },
+          "outbox-dispatcher": {
+            "cpu_percent": 0.6,
+            "mem_usage": "65.28MiB"
+          },
+          "postgres": {
+            "cpu_percent": 0.34,
+            "mem_usage": "229.7MiB"
+          },
+          "redis": {
+            "cpu_percent": 0.95,
+            "mem_usage": "9.383MiB"
+          }
+        },
+        "peak": {
+          "api": {
+            "cpu_percent": 0.59,
+            "mem_usage": "184.5MiB"
+          },
+          "worker": {
+            "cpu_percent": 26.12,
+            "mem_usage": "636.2MiB"
+          },
+          "outbox-dispatcher": {
+            "cpu_percent": 0.0,
+            "mem_usage": "65.3MiB"
+          },
+          "postgres": {
+            "cpu_percent": 3.35,
+            "mem_usage": "234.1MiB"
+          },
+          "redis": {
+            "cpu_percent": 19.59,
+            "mem_usage": "9.281MiB"
+          }
+        }
+      },
+      "passed": true,
+      "status": "PASSED_WITHIN_SLO"
+    },
+    {
+      "stage": "Stage 6: Target Stress",
+      "vus": 500,
+      "configured_duration": "15s",
+      "actual_ingestion_time_seconds": 20.07,
+      "ingestion_metrics": {
+        "total_requests": 2994,
+        "throughput_rps": 175.73,
+        "failed_rate": 0,
+        "p50_ms": 2693.95,
+        "p90_ms": 3287.48,
+        "p95_ms": 3413.16,
+        "p99_ms": 3616.56,
+        "min_ms": 34.87,
+        "max_ms": 3854.86,
+        "avg_ms": 2588.17
+      },
+      "slo_evaluation": {
+        "slo_p95_ms_threshold": 3000,
+        "p95_actual_ms": 3413.16,
+        "latency_slo_met": false,
+        "error_rate_threshold": 0.01,
+        "error_rate_actual": 0,
+        "error_slo_met": true,
+        "queue_drained": true,
+        "stage_status": "SATURATED_DEGRADED"
+      },
+      "asynchronous_delivery": {
+        "events_ingested": 2993,
+        "db_succeeded_deliveries_delta": 2993,
+        "webhooks_received_at_destination": 2993,
+        "unique_delivery_ids_received": 2993,
+        "duplicate_requests_received": 0,
+        "missing_deliveries": 0,
+        "delivery_completion_rate": 1.0,
+        "queue_drain_time_seconds": 2.87,
+        "queue_fully_drained": true,
+        "delivery_throughput_dps": 130.51,
+        "initial_db_state": {
+          "pending_outbox": 0,
+          "pending_deliveries": 0,
+          "succeeded_deliveries": 35649,
+          "failed_deliveries": 4,
+          "dead_lettered_deliveries": 10
+        },
+        "final_db_state": {
+          "pending_outbox": 0,
+          "pending_deliveries": 0,
+          "succeeded_deliveries": 38642,
+          "failed_deliveries": 4,
+          "dead_lettered_deliveries": 10
+        }
+      },
+      "resource_utilization": {
+        "initial": {
+          "api": {
+            "cpu_percent": 0.48,
+            "mem_usage": "184.8MiB"
+          },
+          "worker": {
+            "cpu_percent": 0.31,
+            "mem_usage": "636.1MiB"
+          },
+          "outbox-dispatcher": {
+            "cpu_percent": 0.0,
+            "mem_usage": "65.3MiB"
+          },
+          "postgres": {
+            "cpu_percent": 30.8,
+            "mem_usage": "234.7MiB"
+          },
+          "redis": {
+            "cpu_percent": 0.89,
+            "mem_usage": "8.926MiB"
+          }
+        },
+        "peak": {
+          "api": {
+            "cpu_percent": 0.38,
+            "mem_usage": "195.1MiB"
+          },
+          "worker": {
+            "cpu_percent": 232.91,
+            "mem_usage": "653.5MiB"
+          },
+          "outbox-dispatcher": {
+            "cpu_percent": 0.0,
+            "mem_usage": "65.32MiB"
+          },
+          "postgres": {
+            "cpu_percent": 29.97,
+            "mem_usage": "235.2MiB"
+          },
+          "redis": {
+            "cpu_percent": 6.96,
+            "mem_usage": "9.5MiB"
+          }
+        }
+      },
+      "passed": true,
+      "status": "SATURATED_DEGRADED"
+    }
+  ]
+}
